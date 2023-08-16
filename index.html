@@ -35,6 +35,29 @@
             transform: translate(-50%, -50%); /* Center the cursor on the pointer */
         }
     </style>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Your existing code
+
+        // Track the "magic" sequence
+        let magicSequence = '';
+
+        // Add a keydown event listener
+        document.addEventListener('keydown', function(event) {
+            // Check if the keys "m", "a", "g", "i", "c" are pressed in sequence
+            if (event.key === 'm' || event.key === 'a' || event.key === 'g' || event.key === 'i' || event.key === 'c') {
+                magicSequence += event.key;
+                if (magicSequence === 'magic') {
+                    // Open the YouTube link in a new window
+                    window.open('https://youtu.be/_9bw_VtMUGA?si=3yCn5qNXErjsycXo', '_blank');
+                }
+            } else {
+                // Reset the sequence if any other key is pressed
+                magicSequence = '';
+            }
+        });
+    });
+</script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
@@ -83,7 +106,7 @@
                     window.scrollTo({ top: yOffset, behavior: 'smooth' });
                 } else {
                     // Navigate to the linked page
-                    window.location.href = 'index3.html#position-anchor';
+                    window.location.href = 'file:///C:/Users/tanus/Desktop/f4r4fnj4rl/index.html#position-anchor';
                 }
             });
         });
