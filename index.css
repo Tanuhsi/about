@@ -96,3 +96,19 @@
   z-index:1 ;
  
 }
+
+.ss,
+.desktop1-run,
+.sliding-image {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show the images on hover */
+.ss:hover,
+.desktop1-run:hover,
+.sliding-image:hover {
+  opacity: 1;
+}
+
+
