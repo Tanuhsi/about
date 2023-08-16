@@ -1,0 +1,98 @@
+.desktop1-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+}
+.desktop1-desktop1 {
+  width: 100%;
+  height: 2479px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: flex-start;
+  flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 1);
+}
+.desktop1-text {
+  top: 372px;
+  left: 614px;
+  color: rgb(0, 0, 0);
+  width: 619px;
+  height: auto;
+  position: absolute;
+  font-size: 96px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Major Mono Display;
+  font-weight: 400;
+  line-height: 83%;
+  font-stretch: normal;
+  text-decoration: none;
+  z-index: 5;
+  animation: breathingAnimation 3s 1;
+}
+.desktop1-text4 {
+  top: 1200px;
+  left: 924px;
+  color: rgba(0, 0, 0, 1);
+  width: 348px;
+  height: auto;
+  position: absolute;
+  font-size: 64px;
+  font-style: Regular;
+  text-align: left;
+  font-family: Major Mono Display;
+  font-weight: 400;
+  line-height: 82.99999833106995%;
+  font-stretch: normal;
+  text-decoration: none;
+  animation: slideAnimation 7s ease-in-out 1;
+}
+.desktop1-inkblobo1 {
+  top: 236px;
+  left: -7px;
+  width: 1364px;
+  height: 1754px;
+  position: absolute;
+  z-index: 3;
+}
+
+.desktop1-run {
+  top: 0px;
+  left: 7px;
+  position: absolute;
+}
+
+.bottom-right-image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.text{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  
+}
+
+
+.sliding-image {
+  position: absolute;
+  bottom: 0;
+  left:15px;
+  z-index: 2;
+}
+
+.ss{
+  top: 0px;
+  right: 0;
+  position: absolute;
+  z-index:1 ;
+ 
+}

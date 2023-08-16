@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            cursor: none; /* Hide default cursor */
+        }
+        .image-container {
+            width: 100vw;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Add position relative for overlay */
+            z-index: 1; /* Ensure the overlay is above the images */
+            mask: radial-gradient(circle, transparent 20px, white 30px); /* Mask for cursor overlay */
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+        .custom-cursor {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: background-color 0.3s ease;
+            background-color: yellow;
+            transform: translate(-50%, -50%); /* Center the cursor on the pointer */
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = ['1.png', '2.png', '3.png', '4.png', '5.png', '6.png'];
+            let currentImageIndex = 0;
+            let isClicking = false;
+            
+            const imageContainer = document.querySelector('.image-container');
+            
+            const customCursor = document.createElement('div'); // Create custom cursor element
+            customCursor.classList.add('custom-cursor');
+            document.body.appendChild(customCursor);
+            
+            document.addEventListener('mousemove', (e) => { // Update cursor position
+                const { clientX, clientY } = e;
+                customCursor.style.left = `${clientX}px`;
+                customCursor.style.top = `${clientY}px`;
+            });
+            
+            document.addEventListener('mousedown', () => { // Change cursor color when clicking
+                customCursor.style.backgroundColor = 'blue'; // Change to desired color
+                isClicking = true;
+            });
+            
+            document.addEventListener('mouseup', () => { // Return cursor color when released
+                customCursor.style.backgroundColor = 'yellow'; // Change to original color
+                isClicking = false;
+            });
+            
+            document.addEventListener('mouseleave', () => { // Reset cursor color on leaving window
+                customCursor.style.backgroundColor = 'yellow'; // Change to original color
+                isClicking = false;
+            });
+            
+            imageContainer.addEventListener('click', function() {
+                if (currentImageIndex < images.length - 1) {
+                    currentImageIndex++;
+                    const nextImage = images[currentImageIndex];
+                    const yOffset = imageContainer.offsetTop + imageContainer.clientHeight;
+                    
+                    const newImage = document.createElement('img');
+                    newImage.src = nextImage;
+                    newImage.alt = `Image ${currentImageIndex + 1}`;
+                    
+                    imageContainer.appendChild(newImage);
+                    
+                    window.scrollTo({ top: yOffset, behavior: 'smooth' });
+                } else {
+                    // Navigate to the linked page
+                    window.location.href = 'file:///C:/Users/tanus/Desktop/f4r4fnj4rl/index.html#position-anchor';
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="image-container">
+        <img src="1.png" alt="Image 1">
+    </div>
+</body>
+</html>
